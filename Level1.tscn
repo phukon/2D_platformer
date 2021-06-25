@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Steve.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Kon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pass_through_tileset.tres" type="TileSet" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
