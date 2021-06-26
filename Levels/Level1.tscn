@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Kon.tscn" type="PackedScene" id=2]
-[ext_resource path="res://pass_through_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Tileset/world_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Actors/Kon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tileset/pass_through_tileset.tres" type="TileSet" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 130.391, 26.6667 )
