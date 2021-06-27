@@ -29,3 +29,7 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	velocity.x = lerp(velocity.x, 0, 0.2)
+
+
+func _on_fall_zone_body_entered(body: Node) -> void:
+	get_tree().change_scene("res://Levels/Level1.tscn")
