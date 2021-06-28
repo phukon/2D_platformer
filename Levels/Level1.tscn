@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tileset/world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Actors/Kon.tscn" type="PackedScene" id=2]
@@ -6,12 +6,31 @@
 [ext_resource path="res://assets/background/set2_background.png" type="Texture" id=4]
 [ext_resource path="res://assets/background/set2_tiles.png" type="Texture" id=5]
 [ext_resource path="res://coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/HUD/coin_gold.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Levels/HUD.gd" type="Script" id=9]
+[ext_resource path="res://Actors/Enemy.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 130.391, 26.6667 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2360.65, 28.3396 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.215686 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 35
+font_data = ExtResource( 8 )
 
 [node name="Level1" type="Node2D"]
 
@@ -94,18 +113,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fall_zone"]
 shape = SubResource( 2 )
 
-[node name="coin" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1155.14, 372.649 )
-
-[node name="coin2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2094.77, 389.487 )
-
-[node name="coin3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 896.698, 20.5462 )
-
-[node name="coin4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1109.79, 23.4131 )
-
 [node name="Kon" parent="." instance=ExtResource( 2 )]
 position = Vector2( 211.415, -45.3562 )
 
@@ -118,4 +125,83 @@ drag_margin_v_enabled = true
 drag_margin_left = 0.3
 drag_margin_right = 0.3
 editor_draw_limits = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 9 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 26.8222
+margin_top = 16.0933
+margin_right = 267.822
+margin_bottom = 114.093
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 34.4287
+margin_top = 31.139
+margin_right = 96.4287
+margin_bottom = 89.139
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coins" type="Label" parent="HUD"]
+margin_left = 146.027
+margin_top = 40.7797
+margin_right = 281.027
+margin_bottom = 103.78
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+text = "Coins"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 113.858
+margin_top = 40.9015
+margin_right = 153.858
+margin_bottom = 83.9015
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="coin1" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 1152, 320 )
+
+[node name="coin2" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 1216, 576 )
+
+[node name="coin3" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 2176, 192 )
+
+[node name="coin4" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 640, 192 )
+
+[node name="coin5" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 1664, 320 )
+
+[node name="coin6" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 1408, 320 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 458.348, 384.149 )
 [connection signal="body_entered" from="fall_zone" to="Kon" method="_on_fall_zone_body_entered"]
+[connection signal="coin_collected" from="Coins/coin1" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin5" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin6" to="HUD" method="_on_coin_collected"]

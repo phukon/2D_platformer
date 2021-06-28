@@ -1,13 +1,13 @@
 extends Area2D
 
 
-
+signal coin_collected
 
 
 func _on_coin_body_entered(body: Node) -> void:
 	$AnimationPlayer.play("bounce_animation")
-	body.add_coin() #will not work if one of the coin objects have entered or
-# overlapped one of the platforms(or other static objects).
+	emit_signal("coin_collected")
+	set_collision_mask_bit(0, false)
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	queue_free()
