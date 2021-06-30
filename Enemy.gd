@@ -33,6 +33,9 @@ func _on_top_checker_body_entered(body: Node) -> void:
 	$side_checker.set_collision_layer_bit(4, false)
 	$side_checker.set_collision_mask_bit(0, false)#or else the player will hit the side checker after the top checker is removed from the mask and layers
 	$Timer.start()
+	body.bounce()
+
+
 
 func _on_side_checker_body_entered(body: Node) -> void:
 	get_tree().change_scene("res://Levels/Level1.tscn")

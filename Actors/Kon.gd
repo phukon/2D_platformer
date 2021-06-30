@@ -34,3 +34,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_fall_zone_body_entered(body: Node) -> void:
 	get_tree().change_scene("res://Levels/Level1.tscn")
+
+
+func bounce():
+	velocity.y = JUMPFORCE*0.57
