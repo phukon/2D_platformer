@@ -25,3 +25,7 @@ playing = true
 position = Vector2( 0, 5.96046e-08 )
 scale = Vector2( 0.843574, 0.958608 )
 shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.65
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

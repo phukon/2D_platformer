@@ -35,6 +35,22 @@ func _physics_process(delta: float) -> void:
 func _on_fall_zone_body_entered(body: Node) -> void:
 	get_tree().change_scene("res://Levels/Level1.tscn")
 
-
 func bounce():
 	velocity.y = JUMPFORCE*0.57
+
+func damage(var enemyposx):
+	set_modulate(Color(1, 0.3, 0.3, 0.3))
+	velocity.y = JUMPFORCE*0.45
+	
+	if position.x < enemyposx:
+		velocity.x = -800
+	elif position.x > enemyposx:
+		velocity.x = 800
+	
+	Input.action_release("left")
+	Input.action_release("right")
+	$Timer.start()
+
+
+func _on_Timer_timeout() -> void:
+	get_tree().change_scene("res://Levels/Level1.tscn")

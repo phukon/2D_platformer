@@ -38,7 +38,7 @@ func _on_top_checker_body_entered(body: Node) -> void:
 
 
 func _on_side_checker_body_entered(body: Node) -> void:
-	get_tree().change_scene("res://Levels/Level1.tscn")
+	body.damage(position.x)
 
 func _on_Timer_timeout() -> void:
 	queue_free()
