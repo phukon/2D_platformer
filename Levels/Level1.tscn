@@ -115,19 +115,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fall_zone"]
 shape = SubResource( 2 )
 
-[node name="Kon" parent="." instance=ExtResource( 2 )]
-position = Vector2( 211.415, -45.3562 )
-
-[node name="Camera2D" type="Camera2D" parent="Kon"]
-current = true
-limit_left = 0
-limit_bottom = 950
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-drag_margin_left = 0.3
-drag_margin_right = 0.3
-editor_draw_limits = true
-
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 9 )
 
@@ -204,6 +191,19 @@ position = Vector2( 458.348, 384.149 )
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 623.025, 457.18 )
 direction = 1
+
+[node name="Kon" parent="." instance=ExtResource( 2 )]
+position = Vector2( 211.415, -45.3562 )
+
+[node name="Camera2D" type="Camera2D" parent="Kon"]
+current = true
+limit_left = 0
+limit_bottom = 950
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
 [connection signal="body_entered" from="fall_zone" to="Kon" method="_on_fall_zone_body_entered"]
 [connection signal="coin_collected" from="Coins/coin1" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/coin2" to="HUD" method="_on_coin_collected"]
