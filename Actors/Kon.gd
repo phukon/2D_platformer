@@ -53,4 +53,4 @@ func damage(var enemyposx):
 
 
 func _on_Timer_timeout() -> void:
-	get_tree().change_scene("res://Levels/Level1.tscn")
+	get_tree().change_scene("res://Levels/Game_over_screen.tscn")
