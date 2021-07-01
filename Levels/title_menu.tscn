@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/UI/grey_button04.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/UI/arrow-UP.png" type="Texture" id=4]
 [ext_resource path="res://assets/UI/grey_button13.png" type="Texture" id=5]
 [ext_resource path="res://assets/player-sprites/player/platformChar_idle.png" type="Texture" id=6]
+[ext_resource path="res://assets/enemies/slimeBlue_blue.png" type="Texture" id=7]
+[ext_resource path="res://assets/coin/gold_1.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -20,22 +22,22 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 size = 24
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 50
 outline_size = 5
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 25
 outline_size = 3
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 25
 outline_size = 3
 font_data = ExtResource( 3 )
@@ -52,6 +54,18 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=9]
+size = 25
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 25
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
 [node name="title_menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -60,8 +74,10 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = -0.540344
+margin_top = -0.540344
+margin_right = 1023.46
+margin_bottom = 599.46
 color = Color( 0.168627, 0.215686, 0.341176, 1 )
 
 [node name="Label" type="Label" parent="."]
@@ -102,7 +118,7 @@ margin_left = 7.11775
 margin_top = 4.52945
 margin_right = 100.118
 margin_bottom = 33.5294
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "spacebar"
 __meta__ = {
@@ -115,7 +131,7 @@ margin_left = 88.0
 margin_top = -4.0
 margin_right = 275.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.8, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Controls"
@@ -125,7 +141,7 @@ margin_left = 205.101
 margin_top = 150.193
 margin_right = 283.101
 margin_bottom = 182.193
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0.8, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "= move"
@@ -138,7 +154,7 @@ margin_left = 205.857
 margin_top = 86.5353
 margin_right = 392.857
 margin_bottom = 149.535
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 0.8, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "= jump"
@@ -212,21 +228,61 @@ __meta__ = {
 }
 
 [node name="Player" type="TextureRect" parent="Panel2"]
-margin_left = 30.5356
-margin_top = 69.4535
-margin_right = 68.5356
-margin_bottom = 107.454
+margin_left = 33.3992
+margin_top = 67.5897
+margin_right = 88.3992
+margin_bottom = 122.59
 texture = ExtResource( 6 )
 expand = true
 
 [node name="Label" type="Label" parent="Panel2/Player"]
-margin_left = 47.899
-margin_top = 7.7836
-margin_right = 105.899
-margin_bottom = 39.7836
+margin_left = 55.2141
+margin_top = 18.0248
+margin_right = 113.214
+margin_bottom = 50.0248
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 0.8, 0, 1 )
 text = "= you"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Enemy" type="TextureRect" parent="Panel2"]
+margin_left = 192.683
+margin_top = 74.0098
+margin_right = 238.683
+margin_bottom = 120.01
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel2/Enemy"]
+margin_left = 57.0581
+margin_top = 14.1426
+margin_right = 167.058
+margin_bottom = 46.1426
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+text = "= enemies"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin" type="TextureRect" parent="Panel2"]
+margin_left = 149.937
+margin_top = 156.397
+margin_right = 177.937
+margin_bottom = 184.397
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="Panel2/Coin"]
+margin_left = -111.314
+margin_top = -1.08078
+margin_right = 111.686
+margin_bottom = 30.9192
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+text = "Collect  3          to win!!!"
