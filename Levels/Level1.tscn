@@ -186,14 +186,18 @@ position = Vector2( 1408, 320 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 458.348, 384.149 )
+position = Vector2( 915.966, 10.7416 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 606.961, 117.763 )
+detects_cliffs = false
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 623.025, 457.18 )
 direction = 1
 
 [node name="Kon" parent="." instance=ExtResource( 2 )]
-position = Vector2( 211.415, -45.3562 )
+position = Vector2( 365.432, 49.9347 )
 
 [node name="Camera2D" type="Camera2D" parent="Kon"]
 current = true
