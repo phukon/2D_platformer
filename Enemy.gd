@@ -37,7 +37,7 @@ func _on_top_checker_body_entered(body: Node) -> void:
 	$side_checker.set_collision_mask_bit(0, false)#or else the player will hit the side checker after the top checker is removed from the mask and layers
 	$Timer.start()
 	body.bounce()
-
+	$SoundSquash.play()
 
 
 func _on_side_checker_body_entered(body: Node) -> void:

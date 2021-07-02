@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMPFORCE
+		$soundjump.play()
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x, 0, 0.2)
@@ -33,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_fall_zone_body_entered(body: Node) -> void:
-	get_tree().change_scene("res://Levels/Level1.tscn")
+	get_tree().change_scene("res://Levels/Game_over_screen.tscn")
 
 func bounce():
 	velocity.y = JUMPFORCE*0.57

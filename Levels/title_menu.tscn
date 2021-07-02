@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/UI/grey_button04.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/enemies/slimeBlue_blue.png" type="Texture" id=7]
 [ext_resource path="res://assets/coin/gold_1.png" type="Texture" id=8]
 [ext_resource path="res://Levels/PlayButton.gd" type="Script" id=9]
+[ext_resource path="res://assets/music/Swinging Pants.ogg" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -312,4 +313,8 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
