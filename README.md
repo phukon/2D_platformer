@@ -6,7 +6,7 @@
  A 2D PLATFORMER GAME MADE WITH THE Godot(http://www.godotengine.org) GAME ENGINE.
 
 	###############################################################################
-	**Download the 'windowsexecutable' folder and run the .exe file to play the game**
+	Download the 'windowsexecutable' folder and run the .exe file to play the game
 	###############################################################################
 ![](images/GameOverScreen.jpg)
 ![](images/MainScreen.jpg)
