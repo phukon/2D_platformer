@@ -1,7 +1,7 @@
 # 2D_platformer
 
 
-
+![](images/Level1.jpg)
 
  A 2D PLATFORMER GAME MADE WITH THE GODOT(http://www.godotengine.org) GAME ENGINE.
 
@@ -13,5 +13,4 @@
 
 ###############################################################################
 ![](images/MainScreen.jpg)
-![](images/Level1.jpg)
 
