@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Levels/menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.0941176, 0.498039, 0.517647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 100.772
+margin_top = 121.006
+margin_right = 918.772
+margin_bottom = 419.006
+custom_fonts/font = SubResource( 1 )
+text = "No more can I tolerate your fetid fantasies about your place in the world. There is no place for you in the world. You are like gangrene, highly infectious, smelly and ultimately lethal. You have given reason for yeasts and prions to rejoice: for though they as simple as they are, they are indubitably not the simplest of creatures. You are!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GOButton3" type="Button" parent="."]
+margin_left = 469.0
+margin_top = 522.61
+margin_right = 1013.0
+margin_bottom = 600.61
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+text = "walk away in shame"
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GOButton3" to="GOButton3" method="_on_menu_pressed"]

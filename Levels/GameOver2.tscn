@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Levels/nextgameoverscrn.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.917647, 0.45098, 0.45098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 187.112
+margin_top = 47.5055
+margin_right = 783.112
+margin_bottom = 421.505
+custom_fonts/font = SubResource( 1 )
+text = " You are living proof that manure can sprout legs and walk. The protoplasmic prejudices you pass off as thought have, I observed, the uncanny effect of silencing any meaningful conversation. People forget entirely what they were talking about as they vainly, stupidly even, try to make logical sense out of your oxymoronic utterances. Basically, you are vile beyond belief."
+align = 1
+valign = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GOButton2" type="Button" parent="."]
+margin_left = 837.364
+margin_top = 4.76859
+margin_right = 1013.36
+margin_bottom = 82.7686
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+text = "Next"
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GOButton2" to="GOButton2" method="_on_nextgameoverscrn_pressed"]

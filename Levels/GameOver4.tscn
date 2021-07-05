@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Levels/Button.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.266667, 0.780392, 0.443137, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 156.39
+margin_top = 69.6835
+margin_right = 888.39
+margin_bottom = 441.684
+custom_fonts/font = SubResource( 1 )
+text = " I have sometimes thought that one day righteousness might be restored in the world by some simple act, such as you swallowing your tongue. But alas, I fear you are too busy flapping it in the breeze to ever swallow the horrible truth. I cannot continue with this epistle. What is the point? You are so stupid you probably don't realise these strange white markings called letters are imbued with meaning."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GObutton4" type="Button" parent="."]
+margin_left = 363.4
+margin_top = 397.935
+margin_right = 679.4
+margin_bottom = 475.935
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+text = "Main Menu"
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GObutton4" to="GObutton4" method="_on_Button_pressed"]
