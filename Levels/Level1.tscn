@@ -12,7 +12,6 @@
 [ext_resource path="res://Actors/Enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/music/Retro Beat.ogg" type="AudioStream" id=11]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 130.391, 26.6667 )
 
